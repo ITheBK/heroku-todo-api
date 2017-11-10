@@ -6,6 +6,7 @@
   const {Todo} = require('./models/todos');
   const {User} = require('./models/users');
   const {ObjectID} = require('mongodb');
+  const {authenticate} = require('./middleware/authenticate');
 
 
   var app = express();
@@ -108,6 +109,11 @@
     }).then((token) => {
       res.header('x-auth', token).send(user);
     }).catch((e) => res.status(400).send(e));
+  });
+
+
+  app.get('/users/me', authenticate, (req, res) => {
+      res.send(req.user);
   });
 
   module.exports = {app};
