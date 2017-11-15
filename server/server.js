@@ -73,10 +73,6 @@
     });
   });
 
-  app.listen(port, () => {
-    console.log(`Started on port ${port}`);
-  });
-
   app.patch('/todos/:id', (req, res) => {
     var id = req.params.id;
     var body = _.pick(req.body,['text','completed']);
@@ -134,6 +130,10 @@
     },() => {
       res.status(400).send();
     });
+  });
+  
+  app.listen(port, () => {
+    console.log(`Started on port ${port}`);
   });
 
   module.exports = {app};
