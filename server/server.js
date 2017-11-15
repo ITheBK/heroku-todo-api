@@ -3,8 +3,8 @@
   const express = require('express');
   const bodyParser = require('body-parser');
   const {mangoose} = require('./db/mongoose');
-  const {Todo} = require('./models/todos');
-  const {User} = require('./models/users');
+  const {Todo} = require('./models/todo');
+  const {User} = require('./models/user');
   const {ObjectID} = require('mongodb');
   const {authenticate} = require('./middleware/authenticate');
 
