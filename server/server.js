@@ -116,8 +116,6 @@
       res.send(req.user);
   });
 
-  // POST /users/loging {email,password}
-
   app.post('/users/login', (req, res) => {
     var body = _.pick(req.body, ['email','password']);
 
