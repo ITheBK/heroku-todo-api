@@ -3,7 +3,7 @@
 
   //Mongo from mlab :
   /*
-  >heroku config:set MONGODB_URI="mongodb://ithebk:brtmlb16&#@ds251845.mlab.com:51845/todo-app"
+  >heroku config:set MONGODB_URI="mongodb://ithebk:password@ds251845.mlab.com:51845/todo-app"
   **/
   if(env === 'development' || env === 'test') {
     var config = require('./config.json');
